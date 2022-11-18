@@ -1,0 +1,19 @@
+<materials>
+    <material>
+        <id>1</id>
+        <name>WHITE_101</name>
+        <price>1800</price>
+    </material>
+
+    <material>
+        <id>2</id>
+        <name>WHITE_110</name>
+        <price>1800</price>
+    </material>
+
+    <material>
+        <id>3</id>
+        <name>WHITE_111</name>
+        <price>1800</price>
+    </material>
+</materials>
