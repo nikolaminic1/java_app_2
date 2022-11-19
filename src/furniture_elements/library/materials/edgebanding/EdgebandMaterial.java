@@ -1,13 +1,18 @@
 package furniture_elements.library.materials.edgebanding;
 
 public class EdgebandMaterial {
-    private String edgebandMaterialName;
+    private EdgebandMaterialName edgebandMaterialName;
+    private double edgebandMaterialPrice;
 
-    public String getEdgebandMaterialName() {
-        return edgebandMaterialName;
+    public EdgebandMaterialName getEdgebandMaterialName() {
+        return EdgebandMaterialName.WHITE_ABS_2mm;
     }
 
-    public void setEdgebandMaterialName(String edgebandMaterialName) {
+    public double getEdgebandMaterialPrice() {
+        return edgebandMaterialPrice;
+    }
+
+    public void setEdgebandMaterialName(EdgebandMaterialName edgebandMaterialName) {
         this.edgebandMaterialName = edgebandMaterialName;
     }
 }

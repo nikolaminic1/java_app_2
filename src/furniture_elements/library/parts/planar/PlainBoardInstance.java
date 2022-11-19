@@ -95,7 +95,6 @@ public class PlainBoardInstance {
     private double getArea() {
         double area;
         area = width * length;
-        System.out.println(area);
         return area;
     }
 
@@ -129,9 +128,9 @@ public class PlainBoardInstance {
     public PlainBoardInstance() {
         this.holes = new Hole[0];
         material = new UniverMaterialInstance();
-        edge1 = new Edgeband();
-        edge2 = new Edgeband();
-        edge3 = new Edgeband();
-        edge4 = new Edgeband();
+        edge1 = new Edgeband(true);
+        edge2 = new Edgeband(true);
+        edge3 = new Edgeband(true);
+        edge4 = new Edgeband(true);
     }
 }

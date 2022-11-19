@@ -58,10 +58,10 @@ public class SimpleBox<width, height, depth> {
 
         if(isInMiddleHorizontalAssembling){
             assert false;
-            this.top.setLength((width - left.getThickness() - right.getThickness())/1000);
+            this.top.setLength((width - left.getThickness() - right.getThickness()));
             this.top.setWidth(depth);
 
-            this.bottom.setLength((width - left.getThickness() - right.getThickness())/1000);
+            this.bottom.setLength((width - left.getThickness() - right.getThickness()));
             this.bottom.setWidth(depth);
 
             this.left.setLength(height);
