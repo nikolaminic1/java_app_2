@@ -7,11 +7,11 @@ public class SimpleBox<width, height, depth> {
     private int depth;
     private int height;
     private double priceOfAssembling;
-    private PlainBoardInstance top = new PlainBoardInstance();
-    private PlainBoardInstance bottom = new PlainBoardInstance();
-    private PlainBoardInstance left = new PlainBoardInstance();
-    private PlainBoardInstance right = new PlainBoardInstance();
-    private PlainBoardInstance back = new PlainBoardInstance();
+    private PlainBoardInstance top = new PlainBoardInstance(true, true, true, true);
+    private PlainBoardInstance bottom = new PlainBoardInstance(true, true, true, true);
+    private PlainBoardInstance left = new PlainBoardInstance(false, true, true, true);
+    private PlainBoardInstance right = new PlainBoardInstance(true, true, true, true);
+    private PlainBoardInstance back = new PlainBoardInstance(true, true, true, true);
     private boolean isInMiddleHorizontalAssembling = true;
     private boolean isInMiddleVerticalAssembling = false;
     private double totalPrice;

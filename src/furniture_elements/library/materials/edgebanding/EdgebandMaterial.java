@@ -1,8 +1,18 @@
 package furniture_elements.library.materials.edgebanding;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public class EdgebandMaterial {
-    private EdgebandMaterialName edgebandMaterialName;
     private double edgebandMaterialPrice;
+
+    @Enumerated(EnumType.STRING)
+    private EdgebandMaterialName edgebandMaterialName;
+
+    public EdgebandMaterial() {
+        this.edgebandMaterialPrice = 100;
+        this.edgebandMaterialName = EdgebandMaterialName.WHITE_ABS_2mm;
+    }
 
     public EdgebandMaterialName getEdgebandMaterialName() {
         return EdgebandMaterialName.WHITE_ABS_2mm;

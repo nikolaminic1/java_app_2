@@ -17,13 +17,13 @@ public class PlainBoardInstance {
     private String nameOfBoard;
     private String description;
 
-//    public Hole[] getHoles() {
-//        return holes;
-//    }
-//
-//    public void setHoles(Hole[] holes) {
-//        this.holes = holes;
-//    }
+    public Hole[] getHoles() {
+        return holes;
+    }
+
+    public void setHoles(Hole[] holes) {
+        this.holes = holes;
+    }
 
     public void setPrice(double price) {
     }
@@ -107,7 +107,6 @@ public class PlainBoardInstance {
         double edge2Price = length * edge2.getPrice();
         double edge3Price = width * edge3.getPrice();
         double edge4Price = length * edge4.getPrice();
-
         return edge1Price + edge2Price + edge3Price + edge4Price;
     }
 
@@ -125,12 +124,12 @@ public class PlainBoardInstance {
                 + getHolePrice();
     }
 
-    public PlainBoardInstance() {
+    public PlainBoardInstance(boolean top, boolean bottom, boolean left, boolean right) {
         this.holes = new Hole[0];
         material = new UniverMaterialInstance();
-        edge1 = new Edgeband(true);
-        edge2 = new Edgeband(true);
-        edge3 = new Edgeband(true);
-        edge4 = new Edgeband(true);
+        edge1 = new Edgeband(top);
+        edge2 = new Edgeband(bottom);
+        edge3 = new Edgeband(left);
+        edge4 = new Edgeband(right);
     }
 }

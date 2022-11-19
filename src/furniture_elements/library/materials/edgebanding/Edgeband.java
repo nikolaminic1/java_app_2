@@ -6,14 +6,11 @@ public class Edgeband {
     private double price;
     private boolean isEdgebanded;
 
-    public Edgeband(double thickness, EdgebandMaterial edgebandMaterial) {
-        this.thickness = thickness;
-        this.edgebandMaterial = edgebandMaterial;
-    }
-
     public Edgeband(boolean isEdgebanded) {
         this.isEdgebanded = isEdgebanded;
-        this.price = getPrice();
+        this.thickness = 2;
+        this.edgebandMaterial = new EdgebandMaterial();
+        this.price = this.edgebandMaterial.getEdgebandMaterialPrice();
     }
 
     public void setThickness(double thickness) {
