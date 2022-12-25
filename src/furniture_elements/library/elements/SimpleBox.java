@@ -7,11 +7,11 @@ public class SimpleBox<width, height, depth> {
     private int depth;
     private int height;
     private double priceOfAssembling;
-    private PlainBoardInstance top = new PlainBoardInstance(true, true, true, true);
-    private PlainBoardInstance bottom = new PlainBoardInstance(true, true, true, true);
-    private PlainBoardInstance left = new PlainBoardInstance(false, true, true, true);
-    private PlainBoardInstance right = new PlainBoardInstance(true, true, true, true);
-    private PlainBoardInstance back = new PlainBoardInstance(true, true, true, true);
+    private PlainBoardInstance top = new PlainBoardInstance(false, false, false, false);
+    private PlainBoardInstance bottom = new PlainBoardInstance(false, false, false, false);
+    private PlainBoardInstance left = new PlainBoardInstance(false, false, true, true);
+    private PlainBoardInstance right = new PlainBoardInstance(true, true, false, false);
+    private PlainBoardInstance back = new PlainBoardInstance(false, false, false, false);
     private boolean isInMiddleHorizontalAssembling = true;
     private boolean isInMiddleVerticalAssembling = false;
     private double totalPrice;
@@ -45,16 +45,16 @@ public class SimpleBox<width, height, depth> {
 
 
     private double getBoardsPrice() {
-        double topPrice = this.top.getTotalPrice();
-        double bottomPrice = this.bottom.getTotalPrice();
-        double leftPrice = this.left.getTotalPrice();
-        double rightPrice = this.right.getTotalPrice();
-        double backPrice = this.back.getTotalPrice();
+        double topPrice = top.getTotalPrice();
+        double bottomPrice = bottom.getTotalPrice();
+        double leftPrice = left.getTotalPrice();
+        double rightPrice = right.getTotalPrice();
+        double backPrice = back.getTotalPrice();
         double totalPrice = topPrice + bottomPrice + leftPrice + rightPrice + backPrice;
         return totalPrice;
     }
 
-    public SimpleBox(double width, double height, double depth) {
+    public SimpleBox(int width, int height, int depth) {
 
         if(isInMiddleHorizontalAssembling){
             assert false;
