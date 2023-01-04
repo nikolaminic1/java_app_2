@@ -1,5 +1,14 @@
 package furniture_elements.library.parts.planar;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Hole {
     private double xPosition;
     private double yPosition;

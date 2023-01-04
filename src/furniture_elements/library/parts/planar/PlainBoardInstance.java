@@ -2,7 +2,15 @@ package furniture_elements.library.parts.planar;
 
 import furniture_elements.library.materials.edgebanding.Edgeband;
 import furniture_elements.library.materials.wooden_materials.UniverMaterialInstance;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class PlainBoardInstance {
     private double width;
     private double length;
@@ -16,81 +24,6 @@ public class PlainBoardInstance {
     private Hole[] holes;
     private String nameOfBoard;
     private String description;
-
-    public Hole[] getHoles() {
-        return holes;
-    }
-
-    public void setHoles(Hole[] holes) {
-        this.holes = holes;
-    }
-
-    public void setPrice(double price) {
-    }
-
-    public Edgeband getEdge1() {
-        return edge1;
-    }
-
-    public Edgeband getEdge2() {
-        return edge2;
-    }
-
-    public Edgeband getEdge3() {
-        return edge3;
-    }
-
-    public Edgeband getEdge4() {
-        return edge4;
-    }
-
-    public void setEdge1(Edgeband edge1) {
-        this.edge1 = edge1;
-    }
-
-    public void setEdge2(Edgeband edge2) {
-        this.edge2 = edge2;
-    }
-
-    public void setEdge3(Edgeband edge3) {
-        this.edge3 = edge3;
-    }
-
-    public void setEdge4(Edgeband edge4) {
-        this.edge4 = edge4;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width/1000;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length/1000;
-    }
-
-    public double getThickness() {
-        return thickness;
-    }
-
-    public void setThickness(double thickness) {
-        this.thickness = thickness;
-    }
-
-    public UniverMaterialInstance getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(UniverMaterialInstance material) {
-        this.material = material;
-    }
 
     private double getArea() {
         double area;

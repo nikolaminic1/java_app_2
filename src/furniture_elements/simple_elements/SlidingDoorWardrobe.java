@@ -4,8 +4,19 @@ import furniture_elements.library.actions.Carrying;
 import furniture_elements.library.actions.Mounting;
 import furniture_elements.library.actions.Transport;
 import furniture_elements.library.elements.*;
+import furniture_elements.library.elements.WardrobeDoor.SlidingDoor;
+import furniture_elements.library.elements.WardrobeElements.Leg;
+import furniture_elements.library.elements.WardrobeElements.Rail;
 import furniture_elements.library.parts.planar.PlainBoardInstance;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SlidingDoorWardrobe  {
     public int width;
     public int height;
@@ -15,9 +26,7 @@ public class SlidingDoorWardrobe  {
     public SlidingDoor[] Doors;
     public PlainBoardInstance[] HorizontalBoards;
     public PlainBoardInstance[] VerticalBoards;
-    public Shelves[] Shelves;
-    public Hangers[] Hangers;
-    public DrawerBox[] DrawerBox;
+    public furniture_elements.library.elements.WardrobeDivisions.Divisions[] Divisions;
     public Leg[] Legs;
     public Rail rail;
     public Mounting mounting;

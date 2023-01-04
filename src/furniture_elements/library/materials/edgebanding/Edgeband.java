@@ -1,5 +1,14 @@
 package furniture_elements.library.materials.edgebanding;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Edgeband {
     private double thickness;
     private EdgebandMaterial edgebandMaterial;

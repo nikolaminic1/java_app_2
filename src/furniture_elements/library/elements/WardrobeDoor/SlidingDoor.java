@@ -1,26 +1,35 @@
-package furniture_elements.library.elements;
+package furniture_elements.library.elements.WardrobeDoor;
 
+import furniture_elements.library.elements.WardrobeDoor.*;
 import furniture_elements.library.parts.planar.PlainBoardInstance;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SlidingDoor {
-    public double width;
-    public double height;
-    public int numberOfDivisions;
-    public double sizeOfUpperLowerDivision;
-    public double sizeOfMiddleDivision;
-    public double price;
-    public PlainBoardInstance[] boards;
-    public Handles[] handles;
-    public Brushes[] brushes;
-    public MiddleAluminium[] middleAluminium;
-    public Wheels wheels;
-    public SlowMotion[] slowMotion;
-    public Mirror mirror;
-    public boolean doesHaveSlowMotion;
-    public boolean doesHaveBrushes;
-    public boolean doesHaveMirror;
-    public double mirrorWidth;
-    public double mirrorHeight;
+    private double width;
+    private double height;
+    private int numberOfDivisions;
+    private double sizeOfUpperLowerDivision;
+    private double sizeOfMiddleDivision;
+    private double price;
+    private PlainBoardInstance[] boards;
+    private Handles[] handles;
+    private Brushes[] brushes;
+    private MiddleAluminium[] middleAluminium;
+    private Wheels wheels;
+    private SlowMotion[] slowMotion;
+    private Mirror mirror;
+    private boolean doesHaveSlowMotion;
+    private boolean doesHaveBrushes;
+    private boolean doesHaveMirror;
+    private double mirrorWidth;
+    private double mirrorHeight;
 
     public SlidingDoor(
             double width,

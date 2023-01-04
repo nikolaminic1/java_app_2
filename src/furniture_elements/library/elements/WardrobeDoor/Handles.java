@@ -1,4 +1,4 @@
-package furniture_elements.library.actions;
+package furniture_elements.library.elements.WardrobeDoor;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,5 +9,5 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carrying {
+public class Handles {
 }

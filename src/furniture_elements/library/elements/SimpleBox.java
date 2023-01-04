@@ -1,7 +1,15 @@
 package furniture_elements.library.elements;
 
 import furniture_elements.library.parts.planar.PlainBoardInstance;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SimpleBox<width, height, depth> {
     private int width;
     private int depth;
