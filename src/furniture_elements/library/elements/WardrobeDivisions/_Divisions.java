@@ -9,6 +9,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class _Divisions {
-    private double price;
+public abstract class _Divisions {
+    protected int xPosition;
+    protected int yPosition;
+    protected int height;
+    protected int width;
+    protected int depth;
+    protected int price;
+
+
 }

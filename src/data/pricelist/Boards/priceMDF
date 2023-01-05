@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-8" ?>
+<boards>
+    <board>
+        <id>1</id>
+        <nameOfBoard>White</nameOfBoard>
+        <codeOfBoard>000000</codeOfBoard>
+        <manufacturer>
+            <nameOfManufacturer>Egger</nameOfManufacturer>
+        </manufacturer>
+        <dimensions>
+            <lengthOfBoard>2800</lengthOfBoard>
+            <widthOfBoard>2080</widthOfBoard>
+            <areaOfBoard>x</areaOfBoard>
+        </dimensions>
+        <price>
+            <priceOfBoardPerSquareMeter>1000</priceOfBoardPerSquareMeter>
+            <priceOfWholeBoard>10000</priceOfWholeBoard>
+        </price>
+    </board>
+</boards>

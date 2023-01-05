@@ -12,19 +12,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Lower_Shelves {
-    private double height;
-    private double width;
-    private double depth;
+public abstract class Lower_Shelves extends _Divisions {
     private int numberOfShelves;
     private List<Shelves> shelves;
-    private double price;
 
-    public double getPrice(){
-        price = 0;
-        for(Shelves shelf : shelves){
-            price += shelf.getPrice();
-        }
-        return price;
-    }
+
+//    public int getPrice(){
+//        for(Shelves shelf : shelves){
+//            price += shelf.getPrice();
+//        }
+//        return price;
 }
