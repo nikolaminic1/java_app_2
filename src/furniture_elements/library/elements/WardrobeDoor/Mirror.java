@@ -15,10 +15,4 @@ public class Mirror {
     public double thickness;
     public double price;
 
-    public Mirror(double width, double height, double thickness, double price) {
-        this.width = width;
-        this.height = height;
-        this.thickness = thickness;
-        this.price = price;
-    }
 }

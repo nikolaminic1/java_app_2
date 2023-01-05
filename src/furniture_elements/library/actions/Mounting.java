@@ -8,6 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Mounting {
+    private double price;
+
+    public Mounting(double price) {
+        this.price = price;
+    }
 }

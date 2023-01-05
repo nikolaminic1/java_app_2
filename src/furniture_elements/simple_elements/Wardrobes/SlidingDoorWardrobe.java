@@ -1,9 +1,10 @@
-package furniture_elements.simple_elements;
+package furniture_elements.simple_elements.Wardrobes;
 
 import furniture_elements.library.actions.Carrying;
 import furniture_elements.library.actions.Mounting;
 import furniture_elements.library.actions.Transport;
 import furniture_elements.library.elements.*;
+import furniture_elements.library.elements.WardrobeDivisions._Divisions;
 import furniture_elements.library.elements.WardrobeDoor.SlidingDoor;
 import furniture_elements.library.elements.WardrobeElements.Leg;
 import furniture_elements.library.elements.WardrobeElements.Rail;
@@ -18,20 +19,29 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SlidingDoorWardrobe  {
-    public int width;
-    public int height;
-    public int depth;
-    public int numberOfDivisions;
-    public SimpleBox MainBox;
-    public SlidingDoor[] Doors;
-    public PlainBoardInstance[] HorizontalBoards;
-    public PlainBoardInstance[] VerticalBoards;
-    public furniture_elements.library.elements.WardrobeDivisions.Divisions[] Divisions;
-    public Leg[] Legs;
-    public Rail rail;
-    public Mounting mounting;
-    public Transport transport;
-    public Carrying carrying;
+    // dimension
+    private int width;
+    private int height;
+    private int depth;
+    private int numberOfDivisions;
+
+    // elements
+    //box
+    private SimpleBox MainBox;
+
+    // inside boards
+    private PlainBoardInstance[] HorizontalBoards;
+    private PlainBoardInstance[] VerticalBoards;
+
+    private _Divisions[] _Divisions;
+    private SlidingDoor[] Doors;
+    private Leg[] Legs;
+    private Rail rail;
+
+    // actions
+    private Mounting mounting;
+    private Transport transport;
+    private Carrying carrying;
 
     public SlidingDoorWardrobe(int width, int height, int depth, int numberOfDivisions) {
         this.width = width;

@@ -6,51 +6,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class SimpleBox<width, height, depth> {
-    private int width;
-    private int depth;
-    private int height;
+    private double width;
+    private double depth;
+    private double height;
     private double priceOfAssembling;
     private PlainBoardInstance top = new PlainBoardInstance(false, false, false, false);
     private PlainBoardInstance bottom = new PlainBoardInstance(false, false, false, false);
-    private PlainBoardInstance left = new PlainBoardInstance(false, false, true, true);
-    private PlainBoardInstance right = new PlainBoardInstance(true, true, false, false);
+    private PlainBoardInstance left = new PlainBoardInstance(false, false, false, false);
+    private PlainBoardInstance right = new PlainBoardInstance(false, false, false, false);
     private PlainBoardInstance back = new PlainBoardInstance(false, false, false, false);
-    private boolean isInMiddleHorizontalAssembling = true;
-    private boolean isInMiddleVerticalAssembling = false;
+    private boolean isInMiddleHorizontalAssembling;
+    private boolean isInMiddleVerticalAssembling;
     private double totalPrice;
-
-    //    private PlainBoardInstance[] middleHorizontal;
-    //    private PlainBoardInstance[] middleVertical;
-
-//    public void setInMiddleHorizontalAssembling(boolean inMiddleHorizontalAssembling) {
-//        isInMiddleHorizontalAssembling = inMiddleHorizontalAssembling;
-//    }
-//
-//    public void setInMiddleVerticalAssembling(boolean inMiddleVerticalAssembling) {
-//        isInMiddleVerticalAssembling = inMiddleVerticalAssembling;
-//    }
-
-    public boolean isInMiddleVerticalAssembling() {
-        return isInMiddleVerticalAssembling;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
 
     private double getBoardsPrice() {
         double topPrice = top.getTotalPrice();
@@ -58,23 +32,26 @@ public class SimpleBox<width, height, depth> {
         double leftPrice = left.getTotalPrice();
         double rightPrice = right.getTotalPrice();
         double backPrice = back.getTotalPrice();
-        double totalPrice = topPrice + bottomPrice + leftPrice + rightPrice + backPrice;
-        return totalPrice;
+        return topPrice + bottomPrice + leftPrice + rightPrice + backPrice;
     }
+
+    public double getTotalPrice(){
+        return getBoardsPrice() + priceOfAssembling;
+    }
+
 
     public SimpleBox(int width, int height, int depth) {
 
         if(isInMiddleHorizontalAssembling){
-            assert false;
             this.top.setLength((width - left.getThickness() - right.getThickness()));
             this.top.setWidth(depth);
 
             this.bottom.setLength((width - left.getThickness() - right.getThickness()));
             this.bottom.setWidth(depth);
-
+//
             this.left.setLength(height);
             this.left.setWidth(depth);
-
+//
             this.right.setLength(height);
             this.right.setWidth(depth);
 
@@ -102,16 +79,5 @@ public class SimpleBox<width, height, depth> {
         this.totalPrice = getBoardsPrice() + priceOfAssembling;
     }
 
-    public void setPriceOfAssembling(double priceOfAssembling) {
-        this.priceOfAssembling = priceOfAssembling;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice() {
-
-    }
 
 }

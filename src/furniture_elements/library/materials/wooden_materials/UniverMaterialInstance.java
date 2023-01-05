@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class UniverMaterialInstance {
 
@@ -35,8 +34,4 @@ public class UniverMaterialInstance {
         this.materialPrice = materialPrice;
     }
 
-    public UniverMaterialInstance(UniverName materialName, double materialPrice) {
-        this.materialName = materialName;
-        this.materialPrice = materialPrice;
-    }
 }

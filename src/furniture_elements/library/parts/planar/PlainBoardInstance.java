@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.awt.*;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,17 +19,18 @@ public class PlainBoardInstance {
     private double thickness;
     private double price;
     private UniverMaterialInstance material;
-    private Edgeband edge1;
-    private Edgeband edge2;
-    private Edgeband edge3;
-    private Edgeband edge4;
+    private Edgeband width1;
+    private Edgeband length1;
+    private Edgeband width2;
+    private Edgeband length2;
     private Hole[] holes;
     private String nameOfBoard;
     private String description;
+    private Image qrCode;
 
     private double getArea() {
         double area;
-        area = width * length;
+        area = (width * length) / 1000000;
         return area;
     }
 
@@ -36,11 +39,11 @@ public class PlainBoardInstance {
     }
 
     private double getEdgebandPrice() {
-        double edge1Price = width * edge1.getPrice();
-        double edge2Price = length * edge2.getPrice();
-        double edge3Price = width * edge3.getPrice();
-        double edge4Price = length * edge4.getPrice();
-        return edge1Price + edge2Price + edge3Price + edge4Price;
+        double width1Price = width * width1.getPrice();
+        double length1Price = length * length1.getPrice();
+        double width2Price = width * width2.getPrice();
+        double length2Price = length * length2.getPrice();
+        return (width1Price + length1Price + width2Price + length2Price) / 1000;
     }
 
     private double getHolePrice() {
@@ -57,12 +60,12 @@ public class PlainBoardInstance {
                 + getHolePrice();
     }
 
-    public PlainBoardInstance(boolean top, boolean bottom, boolean left, boolean right) {
+    public PlainBoardInstance(boolean width1_param, boolean length1_param, boolean width2_param, boolean length2_param) {
         this.holes = new Hole[0];
         material = new UniverMaterialInstance();
-        edge1 = new Edgeband(top);
-        edge2 = new Edgeband(bottom);
-        edge3 = new Edgeband(left);
-        edge4 = new Edgeband(right);
+        width1 = new Edgeband(width1_param);
+        length1 = new Edgeband(length1_param);
+        width2 = new Edgeband(width2_param);
+        length2 = new Edgeband(length2_param);
     }
 }
