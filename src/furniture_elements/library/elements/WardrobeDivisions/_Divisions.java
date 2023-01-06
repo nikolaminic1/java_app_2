@@ -16,6 +16,4 @@ public abstract class _Divisions {
     protected int width;
     protected int depth;
     protected int price;
-
-
 }

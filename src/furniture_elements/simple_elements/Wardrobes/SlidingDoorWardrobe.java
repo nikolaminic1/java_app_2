@@ -38,7 +38,7 @@ public class SlidingDoorWardrobe  {
     private PlainBoardInstance[] HorizontalBoards;
     private PlainBoardInstance[] VerticalBoards;
 
-    private List<_Divisions> _Divisions;
+    private List<_Divisions> divisions;
     private List<SlidingDoor> doors;
     private List<Leg> Legs;
     private Rail upperRail;
@@ -64,6 +64,8 @@ public class SlidingDoorWardrobe  {
 
     // create and edit division factory to return and add divisions to list of divisions
     public void addDivision(String division){
+        DivisionFactory divisionFactory = new DivisionFactory();
+        _Divisions lower_shelves = DivisionFactory.createDivision("lower_shelves");
     }
 
 }

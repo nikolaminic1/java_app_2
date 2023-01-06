@@ -1,7 +1,14 @@
 package furniture_elements.library.elements.WardrobeDivisions;
 
-public abstract class DivisionFactory extends _Divisions {
-    public abstract Lower_Shelves createLower_Shelves();
+public class DivisionFactory {
 
+    public static _Divisions createDivision(String type){
+        switch (type){
+            case "lower_shelves":
+                return new Lower_Shelves();
+            default:
+                return null;
+        }
+    }
 
 }
