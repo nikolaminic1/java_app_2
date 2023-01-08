@@ -15,7 +15,7 @@ import java.awt.*;
 @AllArgsConstructor
 public class HDF {
     private double width;
-    private double length;
+    private double height;
     private double thickness;
     private double price;
     private UniverMaterialInstance material;
@@ -25,11 +25,11 @@ public class HDF {
 
     private double getArea() {
         double area;
-        area = (width * length) / 1000000;
+        area = (width * height) / 1000000;
         return area;
     }
 
-    private double getTotalPrice() {
+    public double getTotalPrice() {
         return getArea() * material.getMaterialPrice();
     }
 }

@@ -1,5 +1,8 @@
 package furniture_elements.library.elements;
 
+import furniture_elements.library.materials.edgebanding.Edgeband;
+import furniture_elements.library.materials.edgebanding.EdgebandMaterial;
+import furniture_elements.library.parts.planar.HDF;
 import furniture_elements.library.parts.planar.PlainBoardInstance;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +24,7 @@ public class SimpleBox<width, height, depth> {
     private PlainBoardInstance bottom = new PlainBoardInstance(false, false, false, false);
     private PlainBoardInstance left = new PlainBoardInstance(false, false, false, false);
     private PlainBoardInstance right = new PlainBoardInstance(false, false, false, false);
-    private PlainBoardInstance back = new PlainBoardInstance(false, false, false, false);
+    private HDF back = new HDF();
     private boolean isInMiddleHorizontalAssembling;
     private boolean isInMiddleVerticalAssembling;
     private double totalPrice;
@@ -36,11 +39,45 @@ public class SimpleBox<width, height, depth> {
     }
 
     public double getTotalPrice(){
-        return getBoardsPrice() + priceOfAssembling;
+        return getBoardsPrice();
     }
 
+    public void setFrontEdgeband(EdgebandMaterial edgebandMaterial){
+        this.top.getLength1().setEdgebandMaterial(edgebandMaterial);
+        this.left.getLength1().setEdgebandMaterial(edgebandMaterial);
+        this.bottom.getLength1().setEdgebandMaterial(edgebandMaterial);
+        this.right.getLength1().setEdgebandMaterial(edgebandMaterial);
 
-    public SimpleBox(int width, int height, int depth) {
+        this.top.getLength1().setEdgebanded(true);
+        this.left.getLength1().setEdgebanded(true);
+        this.bottom.getLength1().setEdgebanded(true);
+        this.right.getLength1().setEdgebanded(true);
+    }
+
+    public void setBackEdgeband(boolean isEdgebanded){
+        this.top.getLength2().setEdgebanded(isEdgebanded);
+        this.left.getLength2().setEdgebanded(isEdgebanded);
+        this.right.getLength2().setEdgebanded(isEdgebanded);
+        this.bottom.getLength2().setEdgebanded(isEdgebanded);
+    }
+
+    public void setSideEdgebandMaterial(EdgebandMaterial edgebandMaterial){
+        this.top.getWidth1().setEdgebandMaterial(edgebandMaterial);
+        this.top.getLength2().setEdgebandMaterial(edgebandMaterial);
+
+        this.bottom.getWidth1().setEdgebandMaterial(edgebandMaterial);
+        this.bottom.getLength2().setEdgebandMaterial(edgebandMaterial);
+
+        this.top.getWidth1().setEdgebanded(true);
+        this.top.getLength2().setEdgebanded(true);
+
+        this.bottom.getWidth1().setEdgebanded(true);
+        this.bottom.getLength2().setEdgebanded(true);
+    }
+
+    public SimpleBox (int width, int height, int depth) {
+        this.back.setHeight(height);
+        this.back.setWidth(width);
 
         if(isInMiddleHorizontalAssembling){
             this.top.setLength((width - left.getThickness() - right.getThickness()));
@@ -48,15 +85,12 @@ public class SimpleBox<width, height, depth> {
 
             this.bottom.setLength((width - left.getThickness() - right.getThickness()));
             this.bottom.setWidth(depth);
-//
+
             this.left.setLength(height);
             this.left.setWidth(depth);
-//
+
             this.right.setLength(height);
             this.right.setWidth(depth);
-
-            this.back.setWidth(width);
-            this.back.setLength(height);
 
         } else if (isInMiddleVerticalAssembling){
 
@@ -71,12 +105,9 @@ public class SimpleBox<width, height, depth> {
 
             this.bottom.setLength(height);
             this.bottom.setWidth(depth);
-
-            this.back.setWidth(width);
-            this.back.setLength(height);
         }
 
-        this.totalPrice = getBoardsPrice() + priceOfAssembling;
+        this.totalPrice = getBoardsPrice();
     }
 
 

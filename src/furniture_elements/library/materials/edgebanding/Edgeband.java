@@ -7,13 +7,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class Edgeband {
     private int thickness;
     private EdgebandMaterial edgebandMaterial;
     private double price;
-    private boolean isEdgebanded;
+    private boolean isEdgebanded = false;
+
+    public Edgeband() {
+        this.isEdgebanded = false;
+        this.thickness = 2;
+        this.edgebandMaterial = new EdgebandMaterial();
+        this.price = this.edgebandMaterial.getEdgebandMaterialPrice();
+    }
 
     public Edgeband(boolean isEdgebanded) {
         this.isEdgebanded = isEdgebanded;

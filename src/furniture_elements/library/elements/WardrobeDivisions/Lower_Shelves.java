@@ -15,6 +15,4 @@ import java.util.List;
 public class Lower_Shelves extends _Divisions {
     private int numberOfShelves;
     private List<Shelves> shelves;
-
-
 }
